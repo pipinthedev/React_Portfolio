@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.galaxy-background {
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shooting-star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px 3px white;
+  animation: shootingStarAnimation 2s infinite;
+}
+
+@keyframes shootingStarAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    box-shadow: 0 0 6px 3px white;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50vh) translateX(-50vw);
+    box-shadow: 0 0 6px 3px white;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) translateX(-100vw);
+    box-shadow: 0 0 0px 0px white;
+  }
+}
+
+.glow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: glowAnimation 3s infinite;
+}
+
+@keyframes glowAnimation {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.galaxy {
+  position: absolute;
+  background: radial-gradient(circle, rgba(100,100,255,0.5) 0%, rgba(0,0,0,0) 70%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: rotateGalaxy 100s linear infinite;
+}
+
+@keyframes rotateGalaxy {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-15deg); }
+  50% { transform: rotate(0); }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 70s linear infinite;
+  transition: filter 0.3s;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-content > div {
+  margin-right: 30px; 
+  position: relative;
+}
+
+.transparent-wall {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.transparent-wall.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.transparent-wall.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+.hand-wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
+
+.code-text {
+  font-family: 'Courier New', Courier, monospace;
+  background: #282c34;
+  color: #61dafb;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.view-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: #61dafb;
+  background: #282c34;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.view-button:hover {
+  background: #61dafb;
+  color: #282c34;
+  transform: scale(1.05);
+}
