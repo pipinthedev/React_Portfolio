@@ -1,12 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 
+import octanetsolutions_logo from '../asset/projects/stackfile.jpg';
+import lux from '../asset/projects/lux.png';
+import pastehub from '../asset/projects/pastehub.png';
+import space from '../asset/projects/space.png';
+
 const projectImage = "https://placehold.co/600x400";
 
+
 const projects = [
-  { title: 'Project One', description: 'Description of project one.\n New line in description.', link: '#', image: projectImage },
-  { title: 'Project Two', description: 'Description of project two.', link: '#', image: projectImage },
-  { title: 'Project Three', description: 'Description of project three.', link: '#', image: projectImage },
-  { title: 'Project Four', description: 'Description of project four.', link: '#', image: projectImage },
+  { title: 'Project One', description: 'Description of project one.\n New line in description.', link: '#', image: octanetsolutions_logo },
+  { title: 'Project Two', description: 'Description of project two.', link: '#', image: lux },
+  { title: 'Project Three', description: 'Description of project three.', link: '#', image: space },
+  { title: 'Project Four', description: 'Description of project four.', link: '#', image: pastehub },
   { title: 'Project Five', description: 'Description of project five.', link: "#", image: projectImage },
 ];
 

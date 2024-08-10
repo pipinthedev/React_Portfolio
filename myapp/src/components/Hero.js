@@ -40,7 +40,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="galaxy-background h-screen flex flex-col justify-center items-center text-center p-4 relative">
+    <section id="hero" className="galaxy-background h-screen flex flex-col justify-center items-center text-center p-4 relative">
       <div ref={starContainerRef} className="absolute w-full h-full top-0 left-0">
         {Array.from({ length: 100 }).map((_, index) => (
           <div key={index} className="star" />

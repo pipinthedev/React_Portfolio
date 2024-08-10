@@ -1,16 +1,30 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import crackedLogo from '../asset/logo/cracked_1.png';
+import patchedLogo from '../asset/logo/patched_1.png';
+import githubLogo from '../asset/logo/github_1.png'; 
+import telegramLogo from '../asset/logo/telegram_1.png';
+import '../asset/footer.css'; 
 
 const Footer = () => {
   return (
-    <footer className="bg-background py-8 text-primary">
-      <div className="max-w-screen-xl mx-auto px-4 flex justify-between items-center">
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        <div className="flex space-x-4">
-          <a href="https://facebook.com" className="text-primary"><FaFacebook /></a>
-          <a href="https://twitter.com" className="text-primary"><FaTwitter /></a>
-          <a href="https://linkedin.com" className="text-primary"><FaLinkedin /></a>
-          <a href="https://github.com" className="text-primary"><FaGithub /></a>
+    <footer className="bg-[#000000] py-2 text-primary">
+      <div className="max-w-screen-xl mx-auto px-2 flex flex-col items-center">
+        <p className="mb-1 text-center text-xs font-bold">
+          Made by <span className="underline">pipin</span> with <span className="bump-heart">💓</span>
+        </p>
+        <div className="flex space-x-2 mb-1">
+          <a href="https://github.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+            <img src={githubLogo} alt="GitHub Logo" className="h-8 w-8" />
+          </a>
+          <a href="https://telegram.org" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+            <img src={telegramLogo} alt="Telegram Logo" className="h-8 w-8" />
+          </a>
+          <a href="https://linkedin.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+            <img src={crackedLogo} alt="Cracked Logo" className="h-8 w-8" />
+          </a>
+          <a href="https://linkedin.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+            <img src={patchedLogo} alt="Patched Logo" className="h-8 w-8" />
+          </a>
         </div>
       </div>
     </footer>

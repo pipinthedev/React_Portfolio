@@ -23,7 +23,7 @@ const Header = () => {
           </button>
         </div>
         <nav className={`md:flex md:items-center md:justify-center md:space-x-4 ${isOpen ? 'block' : 'hidden'} w-full md:w-auto mt-4 md:mt-0`}>
-          <Link to="/" className="nav-link">Home</Link>
+        <a href="#hero" className="nav-link">Home</a>
           <a href="#projects" className="nav-link">Projects</a>
           <a href="#experience" className="nav-link">Experience</a>
           <a href="#contact" className="nav-link">Contact</a>

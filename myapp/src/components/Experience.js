@@ -1,19 +1,37 @@
 import React, { useEffect, useRef } from 'react';
+import athulyaseniorcareLogo from '../asset/logo/athulyaseniorcare_logo.jpg';
+import bharat_intern_logo from '../asset/logo/bharat_intern_logo.jpg';
+import nextgen from '../asset/logo/nextgen.png';
+import octanetsolutions_logo from '../asset/logo/octanetsolutions_logo.jpg';
 
 const experiences = [
   { 
-    role: 'Frontend Developer', 
-    company: 'Company One', 
-    duration: '2020-2022', 
-    description: 'Worked on XYZ.', 
-    logo: 'https://via.placeholder.com/80/0000FF/808080?text=Company+One'
+    role: 'Full Stack Web Developer',  
+    company: 'Athulya Senior Care',  
+    duration: 'Aug 2023 - Mar 2024', 
+    description: 'Managed and developed two separate applications for Home Care and Assisted Living. Ensured seamless integration of third-party APIs and optimized the user experience through responsive design and efficient back-end operations.', 
+    logo: athulyaseniorcareLogo 
   },
   { 
-    role: 'Backend Developer', 
-    company: 'Company Two', 
-    duration: '2018-2020', 
-    description: 'Worked on ABC.', 
-    logo: 'https://via.placeholder.com/80/FF0000/FFFFFF?text=Company+Two'
+    role: 'Full Stack Developer',   
+    company: 'OctaNet Services Pvt Ltd.', 
+    duration: 'Feb 2024 - Feb 2024', 
+    description: 'Worked on full-stack development projects using PHP and HTML. Developed dynamic web pages and ensured the website’s functionality and performance were optimized.', 
+    logo: octanetsolutions_logo
+  },
+  { 
+    role: 'Full Stack Developer', 
+    company: 'Bharat Intern', 
+    duration: 'Feb 2024 - Mar 2024', 
+    description: 'Completed several small HTML projects. Focused on front-end development, creating responsive and user-friendly web pages.', 
+    logo: bharat_intern_logo
+  },
+  { 
+    role: 'MYSQL Developer', 
+    company: 'Nextgen', 
+    duration: 'Jan 2024 - Feb 2024', 
+    description: 'Participated in a 15-day intensive program focused on mastering MySQL queries. Developed skills in writing complex queries and optimizing database performance.', 
+    logo: nextgen
   },
 ];
 
@@ -22,21 +40,20 @@ const Experience = () => {
 
   useEffect(() => {
     const glowContainer = glowContainerRef.current;
-    const createFireflies = () => {
-      const fireflyCount = 10; // Change this to your desired number of fireflies
-      for (let i = 0; i < fireflyCount; i++) {
-        const firefly = document.createElement('div');
-        firefly.classList.add('firefly');
-        glowContainer.appendChild(firefly);
+    const createCircles = () => {
+      const circleCount = 10;
+      for (let i = 0; i < circleCount; i++) {
+        const circle = document.createElement('li');
+        glowContainer.appendChild(circle);
       }
     };
-    createFireflies();
+    createCircles();
   }, []);
 
   return (
     <section id="experience" className="bg-background py-16 text-primary relative overflow-hidden">
-      <div ref={glowContainerRef} className="absolute inset-0 pointer-events-none"></div>
-      <div className="max-w-screen-xl mx-auto px-4 ">
+      <div ref={glowContainerRef} className="circles"></div>
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="twelve">
           <h2 className="text-4xl font-bold text-center">Experience</h2>
         </div>

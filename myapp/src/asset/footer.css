@@ -1,0 +1,14 @@
+.bump-heart {
+    display: inline-block;
+    animation: bump 1s infinite;
+  }
+  
+  @keyframes bump {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
