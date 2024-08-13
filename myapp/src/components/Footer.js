@@ -13,16 +13,16 @@ const Footer = () => {
           Made by <span className="underline">pipin</span> with <span className="bump-heart">💓</span>
         </p>
         <div className="flex space-x-2 mb-1">
-          <a href="https://github.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+          <a href="https://github.com/pipinthedev" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={githubLogo} alt="GitHub Logo" className="h-8 w-8" />
           </a>
-          <a href="https://telegram.org" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+          <a href="https://t.me/uhq69" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={telegramLogo} alt="Telegram Logo" className="h-8 w-8" />
           </a>
-          <a href="https://linkedin.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+          <a href="https://cracked.io/pipin" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank" >
             <img src={crackedLogo} alt="Cracked Logo" className="h-8 w-8" />
           </a>
-          <a href="https://linkedin.com" className="text-primary hover:text-[#61dafb] transition-colors duration-300">
+          <a href="https://patched.to/User/pipin-36630" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={patchedLogo} alt="Patched Logo" className="h-8 w-8" />
           </a>
         </div>
