@@ -121,7 +121,7 @@
 .animate-marquee {
   display: flex;
   white-space: nowrap;
-  animation: marquee 70s linear infinite;
+  animation: marquee 120s linear infinite;
   transition: filter 0.3s;
 }
 

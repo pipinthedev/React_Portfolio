@@ -1,23 +1,92 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import octanetsolutions_logo from '../asset/projects/stackfile.jpg';
-import lux from '../asset/projects/lux.png';
-import pastehub from '../asset/projects/pastehub.png';
-import space from '../asset/projects/space.png';
+import genx from '../asset/projects/genx.png';
+import genx2 from '../asset/projects/genx2.png';
+import genx3 from '../asset/projects/genx3.png';
+import genx4 from '../asset/projects/genx4.png';
 
-const projectImage = "https://placehold.co/600x400";
+import compas from '../asset/projects/compas.png';
+import compas2 from '../asset/projects/compas2.png';
+import compas3 from '../asset/projects/compas3.png';
+import compas4 from '../asset/projects/compas4.png';
+import compas5 from '../asset/projects/compas5.png';
+
+import combo from '../asset/projects/combo.png';
+import combo2 from '../asset/projects/combo2.png';
+import combo3 from '../asset/projects/combo3.png';
+import combo4 from '../asset/projects/combo4.png';
+import combo5 from '../asset/projects/combo5.png';
+
+import email from '../asset/projects/email.png';
+import email2 from '../asset/projects/email2.png';
+import email3 from '../asset/projects/email3.png';
+import email4 from '../asset/projects/email4.png';
+import email5 from '../asset/projects/email5.png';
+
+import heist from '../asset/projects/heist.png';
+import heist2 from '../asset/projects/heist2.png';
+import heist3 from '../asset/projects/heist3.png';
+
+import chopaa from '../asset/projects/copaa.png';
+import chopaa2 from '../asset/projects/copaa2.png';
+
+import flex from '../asset/projects/flex.png';
+import flex2 from '../asset/projects/flex2.png';
+import flex3 from '../asset/projects/flex3.png';
+import flex4 from '../asset/projects/flex4.png';
+
 
 
 const projects = [
-  { title: 'Project One', description: 'Description of project one.\n New line in description.', link: '#', image: octanetsolutions_logo },
-  { title: 'Project Two', description: 'Description of project two.', link: '#', image: lux },
-  { title: 'Project Three', description: 'Description of project three.', link: '#', image: space },
-  { title: 'Project Four', description: 'Description of project four.', link: '#', image: pastehub },
-  { title: 'Project Five', description: 'Description of project five.', link: "#", image: projectImage },
+  { 
+    title: 'Genx - The Gen Bot', 
+    description: 'Genx is a telegram bot that generates Accounts and Rewards for users. its fully free and open-source project.',    
+    link: 'https://t.me/Genx_Gen_Bot', 
+    images: [genx, genx2, genx3, genx4] 
+  },
+  { 
+    title: 'Compas - Hotel Booking bot.', 
+    description: 'Compas is a telegram bot that helps book hotels and provides a variety of services. without any hassle and with web ui to fill their infos. they can book flight/hotel/cars.',     
+    link: 'https://t.me/CompasAgency_Bot', 
+    images: [compas, compas2, compas3, compas4, compas5]  
+  },
+  { 
+    title: 'Combo Downloader - Search for breaches and leaks with intelx api.', 
+    description: 'intelx searching bot that searches for breaches and leaks. its free and paid. used to run for past 1 year.',         
+    link: 'https://t.me/intelx_searching_bot', 
+    images: [combo, combo2, combo3, combo4, combo5]  
+  },
+  { 
+    title: 'Email Bomber - Send large amount of emails.',  
+    description: 'Email Bomber is made for educational purposes only. it can send large amount of emails and make the email flooded.',                  
+    link: 'https://t.me/emailnsms_bot', 
+    images: [email, email2, email3, email4, email5]  
+  },
+  { 
+    title: 'Heist - otp bot',  
+    description: 'Heist is a telegram bot that sends OTPs for various services and grabs the otp from the victim. made for educational purposes only.',                                             
+    link: 'https://t.me/pipcode', 
+    images: [heist, heist2, heist3]  
+  },
+  { 
+    title: 'Choppa - Drop Bot',  
+    description: 'A Telegram bot that drops premium accounts for free with cooldown.',                                             
+    link: 'https://t.me/pipcode', 
+    images: [chopaa, chopaa2]  
+  },
+  { 
+    title: 'Flex - Drop Bot',  
+    description: 'A Telegram bot that drops premium accounts for free with cooldown but with more advanced features.',                                                                                          
+    link: 'https://t.me/pipcode', 
+    images: [flex, flex2, flex3, flex4]    
+  },
 ];
 
 const Projects = () => {
   const glowContainerRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState('');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const glowContainer = glowContainerRef.current;
@@ -33,6 +102,30 @@ const Projects = () => {
     };
     createGlowElements();
   }, []);
+
+  const openModal = (images, index = 0) => {
+    setModalImage(images[index]);
+    setCurrentImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalImage('');
+    setCurrentImageIndex(0);
+  };
+
+  const handlePrevImage = (images) => {
+    const newIndex = (currentImageIndex - 1 + images.length) % images.length;
+    setModalImage(images[newIndex]);
+    setCurrentImageIndex(newIndex);
+  };
+
+  const handleNextImage = (images) => {
+    const newIndex = (currentImageIndex + 1) % images.length;
+    setModalImage(images[newIndex]);
+    setCurrentImageIndex(newIndex);
+  };
 
   return (
     <section id="projects" className="bg-background py-16 text-primary relative overflow-hidden">
@@ -54,10 +147,16 @@ const Projects = () => {
             >
               {index % 2 === 0 ? (
                 <>
-                  <div className="flex justify-center">
-                    <div className="w-full md:w-3/4 h-64 overflow-hidden">
-                      <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-lg" />
+                  <div className="flex flex-col justify-center items-center">
+                    <div className="w-full h-48 md:w-3/4 md:h-96 lg:h-[450px] overflow-hidden">
+                      <img 
+                        src={project.images[0]} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover rounded-lg cursor-pointer" 
+                        onClick={() => openModal(project.images)} 
+                      />
                     </div>
+                    <p className="text-sm mt-2 text-center text-gray-500">Click on the image for more info</p>
                   </div>
                   <div className="flex flex-col justify-center">
                     <h3 className="text-2xl font-bold text-[#aa06f7]">{project.title}</h3>
@@ -86,10 +185,16 @@ const Projects = () => {
                       View
                     </a>
                   </div>
-                  <div className="flex justify-center">
-                    <div className="w-full md:w-3/4 h-64 overflow-hidden">
-                      <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-lg" />
+                  <div className="flex flex-col justify-center items-center">
+                    <div className="w-full h-48 md:w-3/4 md:h-96 lg:h-[450px] overflow-hidden">
+                      <img 
+                        src={project.images[0]} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover rounded-lg cursor-pointer" 
+                        onClick={() => openModal(project.images)} 
+                      />
                     </div>
+                    <p className="text-sm mt-2 text-center text-gray-500">Click on the image for more info</p>
                   </div>
                 </>
               )}
@@ -97,6 +202,32 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="relative">
+            <img src={modalImage} alt="Project" className="max-w-full max-h-screen object-contain" />
+            <button 
+              onClick={closeModal} 
+              className="absolute top-4 right-4 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-red-600 transition"
+            >
+              &times;
+            </button>
+            <button 
+              onClick={() => handlePrevImage(projects.find(project => project.images.includes(modalImage)).images)} 
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-gray-600 transition"
+            >
+              &#8592;
+            </button>
+            <button 
+              onClick={() => handleNextImage(projects.find(project => project.images.includes(modalImage)).images)} 
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-gray-600 transition"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
