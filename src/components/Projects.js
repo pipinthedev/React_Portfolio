@@ -36,6 +36,42 @@ import flex3 from '../asset/projects/flex3.png';
 import flex4 from '../asset/projects/flex4.png';
 
 
+import b4u from '../asset/projects/b4u.png';
+import b4u2 from '../asset/projects/b4u2.png';
+import b4u3 from '../asset/projects/b4u3.png';
+import b4u4 from '../asset/projects/b4u4.png';
+import b4u5 from '../asset/projects/b4u5.png';
+
+
+import lux from '../asset/projects/lux.png';
+import lux2 from '../asset/projects/lux2.jpg';
+import lux3 from '../asset/projects/lux3.jpg';
+
+import pastehub from '../asset/projects/pastehub.png';
+import pastehub2 from '../asset/projects/pastehub2.png';
+import pastehub3 from '../asset/projects/pastehub3.png';
+
+import ai from '../asset/projects/ai.png';
+import ai2 from '../asset/projects/ai2.png';
+import ai3 from '../asset/projects/ai3.png';
+import ai4 from '../asset/projects/ai4.png';
+
+import refund from '../asset/projects/refunder.png';
+import refund2 from '../asset/projects/refunder2.png';
+import refund3 from '../asset/projects/refunder3.png';
+import refund4 from '../asset/projects/refunder4.png';
+import refund5 from '../asset/projects/refunder5.png';
+import refund6 from '../asset/projects/refunder6.png';
+
+import u2pay from '../asset/projects/u2pay.png';
+import u2pay2 from '../asset/projects/u2pay2.png';
+import u2pay3 from '../asset/projects/u2pay3.png';
+
+import quickpaste from '../asset/projects/quickpaste.png';
+import quickpaste2 from '../asset/projects/quickpaste2.png';
+import quickpaste3 from '../asset/projects/quickpaste3.png';
+
+
 
 const projects = [
   { 
@@ -79,6 +115,54 @@ const projects = [
     description: 'A Telegram bot that drops premium accounts for free with cooldown but with more advanced features.',                                                                                          
     link: 'https://t.me/pipcode', 
     images: [flex, flex2, flex3, flex4]    
+  },
+  { 
+    title: 'B4U - Buy Things for Cheap',  
+    description: 'Website that takes order from user and collects the payment automatically.',                                                                                          
+    link: 'https://b4u.fo/', 
+    images: [b4u, b4u2, b4u3, b4u4, b4u5]    
+  },
+  { 
+    title: 'luxshop - Card Shop',    
+    description: 'Website that offers different types of cards and other products.',                                                                                                                                                                                    
+    link: 'https://luxshop.cc/', 
+    images: [lux, lux2, lux3]
+  },
+  { 
+    title: 'EuropeanMarket - Card Shop',    
+    description: 'Website that offers different types of cards and other products same like lux but with new features',                                                                                                                                                                                    
+    link: 'https://europeanmarket.cc', 
+    images: [lux2, lux, lux3]
+  },
+  { 
+    title: 'Pastehub - Paste website',    
+    description: 'Allows users to paste text and share them as link to others.',                                                                                                                                                                                    
+    link: 'https://www.pastehub.gg/', 
+    images: [pastehub, pastehub2, pastehub3]
+  },
+  { 
+    title: 'Novacebot - AI Website With Payments.',    
+    description: 'it allows users to pay to get the pre access of the ai.',                                                                                                                                                                                    
+    link: 'https://t.me/pipcode', 
+    images: [ai, ai2, ai3, ai4]
+  },
+  { 
+    title: 'Refund - Crypto Refund Website.',    
+    description: 'its made for users to get refund of their crypto from trusted wallets.',                                                                                                                                                                                                                                                                                                                                                                        
+    link: 'https://t.me/pipcode', 
+    images: [refund, refund2, refund3, refund4, refund5, refund6]
+  },
+  { 
+    title: 'u2pay - P2P Payment Gateway.',        
+    description: 'its a simple upi payment application with rewards and cashbacks along with ecommerce and Mobile recharge.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    link: 'https://u2pay.in/', 
+    images: [u2pay, u2pay2, u2pay3]
+  },
+  { 
+    title: 'Quickpaste - Paste website.',                
+    description: 'fixing small bugs and vulnerabilities and improving performance. i didnt make this.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    link: 'https://quickpaste.it', 
+    images: [quickpaste, quickpaste2, quickpaste3]
   },
 ];
 
