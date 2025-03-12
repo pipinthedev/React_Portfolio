@@ -238,6 +238,8 @@ const Projects = () => {
                         alt={project.title} 
                         className="w-full h-full object-cover rounded-lg cursor-pointer" 
                         onClick={() => openModal(project.images)} 
+                        loading="lazy" 
+                        decoding="async" 
                       />
                     </div>
                     <p className="text-sm mt-2 text-center text-gray-500">Click on the image for more info</p>
@@ -276,6 +278,9 @@ const Projects = () => {
                         alt={project.title} 
                         className="w-full h-full object-cover rounded-lg cursor-pointer" 
                         onClick={() => openModal(project.images)} 
+                        loading="lazy" 
+                        decoding="async" 
+                        fetchpriority="high" 
                       />
                     </div>
                     <p className="text-sm mt-2 text-center text-gray-500">Click on the image for more info</p>
@@ -288,30 +293,47 @@ const Projects = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative">
-            <img src={modalImage} alt="Project" className="max-w-full max-h-screen object-contain" />
-            <button 
-              onClick={closeModal} 
-              className="absolute top-4 right-4 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-red-600 transition"
-            >
-              &times;
-            </button>
-            <button 
-              onClick={() => handlePrevImage(projects.find(project => project.images.includes(modalImage)).images)} 
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-gray-600 transition"
-            >
-              &#8592;
-            </button>
-            <button 
-              onClick={() => handleNextImage(projects.find(project => project.images.includes(modalImage)).images)} 
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-800 rounded-full p-2 hover:bg-gray-600 transition"
-            >
-              &#8594;
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+    <div className="relative flex flex-col items-center w-full max-w-[90vw] md:max-w-[70vw] lg:max-w-[60vw]">
+
+      {/* Modal Image */}
+      <img 
+        src={modalImage} 
+        alt="Project" 
+        className="w-full h-auto max-h-[80vh] object-contain rounded-md"
+      />
+
+      {/* Close Button */}
+      <button 
+        onClick={closeModal} 
+        className="absolute top-4 right-4 text-white text-2xl bg-gray-700 bg-opacity-70 rounded-full p-2 transition hover:bg-gray-600"
+        aria-label="Close Modal"
+      >
+        &times;
+      </button>
+
+      {/* Navigation Buttons */}
+      <button 
+        onClick={() => handlePrevImage(projects.find(project => project.images.includes(modalImage)).images)} 
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-700 bg-opacity-70 rounded-full p-3 transition hover:bg-gray-600"
+        aria-label="Previous Image"
+      >
+        &#8592;
+      </button>
+
+      <button 
+        onClick={() => handleNextImage(projects.find(project => project.images.includes(modalImage)).images)} 
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl bg-gray-700 bg-opacity-70 rounded-full p-3 transition hover:bg-gray-600"
+        aria-label="Next Image"
+      >
+        &#8594;
+      </button>
+
+    </div>
+  </div>
+)}
+
+
     </section>
   );
 };
