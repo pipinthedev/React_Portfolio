@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+import TelegramPopup from './TelegramPopup';
 
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context('../asset/images/', false, /\.png$/));
@@ -41,6 +42,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="galaxy-background h-screen flex flex-col justify-center items-center text-center p-4 relative">
+      <TelegramPopup />
       <div ref={starContainerRef} className="absolute w-full h-full top-0 left-0">
         {Array.from({ length: 100 }).map((_, index) => (
           <div key={index} className="star" />

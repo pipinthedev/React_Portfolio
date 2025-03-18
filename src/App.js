@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Hero from './components/Hero';
@@ -9,8 +9,11 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import pipinLogo from './asset/logo/pipin_logo.png';
+import Preloader from './components/Preloader';
+import TelegramPopup from './components/TelegramPopup';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
   const fullTitle = 'Pipin - Full Stack Developer 🧑‍💻';
   const awayTitles = [
     'Hire me for your projects!',
@@ -23,6 +26,10 @@ const App = () => {
   let titleInterval;
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.innerHTML = `
@@ -85,17 +92,22 @@ const App = () => {
         <meta name="twitter:card" content={pipinLogo} />
         <link rel="icon" href={pipinLogo} />
       </Helmet>
-      <div className="bg-black text-primary">
-        <Header />
-        <main className="mt-16">
-          <Hero />
-          <Projects />
-          <Experience />
-          <Contact />
-          <ScrollToTopButton />
-        </main>
-        <Footer />
-      </div>
+
+      {loading ? (
+        <Preloader />
+      ) : (
+        <div className="bg-black text-primary">
+          <Header />
+          <main className="mt-16">
+            <Hero />
+            <Projects />
+            <Experience />
+            <Contact />
+            <ScrollToTopButton />
+          </main>
+          <Footer />
+        </div>
+      )}
     </Router>
   );
 };

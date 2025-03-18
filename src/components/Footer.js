@@ -19,7 +19,7 @@ const Footer = () => {
           <a href="https://t.me/uhq69" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={telegramLogo} alt="Telegram Logo" className="h-8 w-8" />
           </a>
-          <a href="https://cracked.io/pipin" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank" >
+          <a href="https://cracked.io/pipin" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank" disabled>
             <img src={crackedLogo} alt="Cracked Logo" className="h-8 w-8" />
           </a>
           <a href="https://patched.to/User/pipin-36630" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
