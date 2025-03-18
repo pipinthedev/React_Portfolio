@@ -1,5 +1,5 @@
 import React from 'react';
-import crackedLogo from '../asset/logo/cracked_1.png';
+import MonkeyLogo from '../asset/logo/mk.png';
 import patchedLogo from '../asset/logo/patched_1.png';
 import githubLogo from '../asset/logo/github_1.png'; 
 import telegramLogo from '../asset/logo/telegram_1.png';
@@ -19,8 +19,8 @@ const Footer = () => {
           <a href="https://t.me/uhq69" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={telegramLogo} alt="Telegram Logo" className="h-8 w-8" />
           </a>
-          <a href="https://cracked.io/pipin" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank" disabled>
-            <img src={crackedLogo} alt="Cracked Logo" className="h-8 w-8" />
+          <a href="https://monkeytype.com/profile/pranesh_" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank" disabled>
+            <img src={MonkeyLogo} alt="monkeytype Logo" className="h-8 w-8" />
           </a>
           <a href="https://patched.to/User/pipin-36630" className="text-primary hover:text-[#61dafb] transition-colors duration-300" target="_blank">
             <img src={patchedLogo} alt="Patched Logo" className="h-8 w-8" />

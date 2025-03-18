@@ -10,8 +10,6 @@ import Header from './components/Header';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import pipinLogo from './asset/logo/pipin_logo.png';
 import Preloader from './components/Preloader';
-import TelegramPopup from './components/TelegramPopup';
-
 const App = () => {
   const [loading, setLoading] = useState(true);
   const fullTitle = 'Pipin - Full Stack Developer 🧑‍💻';
